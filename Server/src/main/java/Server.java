@@ -1,5 +1,3 @@
-package org.example;
-
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -21,7 +19,7 @@ public class Server {
                 /* Accepts connections */
                 clientConnection = serverSocket.accept();
                 /* Make a new thread for each client */
-                new Thread(new ServerThread(clientConnection)).start();
+                new Thread(new ClientThread(clientConnection)).start();
             }
 
         } catch (IOException e) { /* Failed to create the Terminal */
